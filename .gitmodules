@@ -1,0 +1,6 @@
+[submodule "thirdparty/tensorflow"]
+	path = thirdparty/tensorflow
+	url = https://github.com/tensorflow/tensorflow
+[submodule "thirdparty/opencv"]
+	path = thirdparty/opencv
+	url = https://github.com/opencv/opencv

@@ -31,7 +31,13 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(include)
 
 add_subdirectory(src)
-add_subdirectory(examples)
+
+if (DEFINED BUILD_EXAMPLES)
+  message("Configurating for examples")
+  add_subdirectory(examples)
+else()
+  message("Skip examples. If you also want to build examples, add -DBUILD_EXAMPLES in cmake command")
+endif()
 
 install (TARGETS ${CMAKE_PROJECT_NAME} DESTINATION lib)
 file(GLOB headers "include/*.h")

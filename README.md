@@ -32,33 +32,47 @@ git clone --recursive https://github.com/bienxanh1901/tflite-object-detection
 
 - Update The system:
 
-```sh
-sudo apt update
-sudo apt dist-upgrade
-```
+    ```sh
+    sudo apt update
+    sudo apt dist-upgrade
+    ```
 
 - Install development packages:
 
-```sh
-sudo apt install build-essential cmake unzip pkg-config gfortran gcc g++ gperf flex texinfo gawk bison openssl pigz libncurses-dev autoconf automake tar figlet
-```
+    ```sh
+    sudo apt install build-essential cmake unzip pkg-config gfortran gcc g++ gperf flex texinfo gawk bison openssl pigz libncurses-dev autoconf automake tar figlet
+    ```
 
 - Build and install opencv:
 
-Follow this instruction to build and install opencv in folder [thirparty/opencv](thirdparty/opencv/):
-https://docs.opencv.org/4.x/d0/d3d/tutorial_general_install.html
+    Follow this instruction to build and install opencv in folder [thirparty/opencv](thirdparty/opencv/):
+    https://docs.opencv.org/4.x/d0/d3d/tutorial_general_install.html
 
-- Build the library and examples:
+- Create build directory:
 
-```sh
-mkdir build && cd build
+    ```sh
+    mkdir build && cd build
+    ```
 
-cmake ..
+- Configurate:
 
-cmake --build . -j <number-process>
+    ```sh
+    cmake ..
+    ```
 
-cmake --install . --prefix "<path/to/install/dir>"
-```
+    or enable BUILD_EXAMPLES option to build examples:
+
+    ```sh
+    cmake -DBUILD_EXAMPLES ..
+    ```
+
+- Build and install
+
+    ```sh
+    cmake --build . -j <number-process>
+
+    cmake --install . --prefix "<path/to/install/dir>"
+    ```
 
 ### Raspberry PI Cross Compiling
 

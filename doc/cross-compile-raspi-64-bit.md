@@ -15,17 +15,26 @@ cmake -DCMAKE_TOOLCHAIN_FILE=<path/to/PI.cmake> -DBUILD_SHARED_LIBS=OFF ..
 cmake --build . -j <number-process>
 ```
 
-## Build library and example
+## Configurate
 
 ```sh
 
 mkdir build && cd build
 
 OpenCV_DIR=</path/to/opencv/build> cmake -DCMAKE_TOOLCHAIN_FILE=<path/to/PI.cmake> ..
+```
 
+
+To build examples, enable BUILD_EXAMPLES option:
+
+```sh
+OpenCV_DIR=</path/to/opencv/build> cmake -DCMAKE_TOOLCHAIN_FILE=<path/to/PI.cmake> -DBUILD_EXAMPLES ..
+```
+
+## Build and Install
+
+```sh
 cmake --build . -j <number-process>
 
 cmake --install . --prefix "<path/to/install/dir>"
-
-
 ```

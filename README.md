@@ -3,6 +3,7 @@
 ## Content
 - [Introduction](#introduction)
 - [Build Steps](#build-steps)
+    - [On-device Compiling](#on-device-compiling)
     - [Raspberry PI Cross Compiling](#raspberry-pi-cross-compiling)
 
 ## Introduction
@@ -25,6 +26,38 @@ Then clone the repository:
 
 ```sh
 git clone --recursive https://github.com/bienxanh1901/tflite-object-detection
+```
+
+### On-Device Compiling
+
+- Update The system:
+
+```sh
+sudo apt update
+sudo apt dist-upgrade
+```
+
+- Install development packages:
+
+```sh
+sudo apt install build-essential cmake unzip pkg-config gfortran gcc g++ gperf flex texinfo gawk bison openssl pigz libncurses-dev autoconf automake tar figlet
+```
+
+- Build and install opencv:
+
+Follow this instruction to build and install opencv in folder [thirparty/opencv](thirdparty/opencv/):
+https://docs.opencv.org/4.x/d0/d3d/tutorial_general_install.html
+
+- Build the library and examples:
+
+```sh
+mkdir build && cd build
+
+cmake ..
+
+cmake --build . -j <number-process>
+
+cmake --install . --prefix "<path/to/install/dir>"
 ```
 
 ### Raspberry PI Cross Compiling

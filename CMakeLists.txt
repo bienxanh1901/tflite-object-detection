@@ -21,7 +21,7 @@ message(TENSORFLOW_SOURCE_DIR="${TENSORFLOW_SOURCE_DIR}")
 message(CMAKE_CURRENT_BINARY_DIR="${CMAKE_CURRENT_BINARY_DIR}")
 
 add_subdirectory(
-  "${TENSORFLOW_SOURCE_DIR}/thirdparty/tensorflow/lite"
+  "${TENSORFLOW_SOURCE_DIR}/tensorflow/lite"
   "${CMAKE_CURRENT_BINARY_DIR}/tensorflow-lite"
   EXCLUDE_FROM_ALL
 )

@@ -25,7 +25,7 @@ OpenCV_DIR=</path/to/opencv/build> cmake -DCMAKE_TOOLCHAIN_FILE=<path/to/PI.cmak
 
 cmake --build . -j <number-process>
 
-cmake --install . --prefix "<path/to/install/path"
+cmake --install . --prefix "<path/to/install/dir>"
 
 
 ```

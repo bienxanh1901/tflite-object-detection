@@ -4,24 +4,24 @@
 
 int main()
 {
-  ObjectDetector *objectDetector = ObjectDetector::GetInstance();
+    ObjectDetector *objectDetector = ObjectDetector::GetInstance();
 
-  objectDetector->ShowModelInfo();
+    objectDetector->ShowModelInfo();
 
-  cv::Mat img = imread("../demo_data/image.jpg", cv::IMREAD_COLOR);
+    cv::Mat img = imread("../demo_data/image.jpg", cv::IMREAD_COLOR);
 
-  if (img.empty())
-  {
-    std::cout << "Could not read the image: " << std::endl;
-    return 1;
-  }
+    if (img.empty())
+    {
+        std::cout << "Could not read the image: " << std::endl;
+        return 1;
+    }
 
-  std::vector<Object> results = objectDetector->Invoke(img);
+    std::vector<Object> results = objectDetector->Invoke(img);
 
-  std::vector<Object>::iterator it = results.begin();
+    std::vector<Object>::iterator it = results.begin();
 
-  for (; it != results.end(); it++)
-  {
-    std::cout << it->className << " " << it->score << std::endl;
-  }
+    for (; it != results.end(); it++)
+    {
+        std::cout << it->className << " " << it->score << std::endl;
+    }
 }
